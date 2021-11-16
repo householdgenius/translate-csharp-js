@@ -2,18 +2,19 @@
 console.log("Let's roll some dice, baby!")
 console.log("---------------------------")
 
+const dieStringArray= ["zero","one","two","three","four","five","six"]
 for (let i = 0; i < 10; i++)
 {
-     die1 = Roll();
-     die2 = Roll();
+     die1 = getRandomRoll(1,6);
+     die2 = getRandomRoll(1,6);
 
-    const message = `${die1} + ${die2} == ${die1.Value + die2.Value}`;
-    if (die1.Value == die2.Value)
+    let message = `${dieStringArray[die1]} + ${dieStringArray[die2]} == ${die1 + die2}`;
+    if (die1 == die2)
     {
         message += " DOUBLES!";
     }
 
-    Console.log(message);
+    console.log(message);
 }
 
 function getRandomRoll(min, max) {
@@ -23,14 +24,15 @@ function getRandomRoll(min, max) {
 }
 
 
-const createDie = (value) => {
-    return {
-        value,
-        toString: () => {
-            const dieString = "Unknown"
-            const dieStringArray= ["zero","one","two","three","four","five","six"]
-            dieString = dieStringArray[this.value] 
-            return dieString
-        }
-    }
-}
+// const createDie = (value) => {
+//     return {
+//         value,
+//         toString: () => {
+//             const dieString = "Unknown"
+//             const dieStringArray= ["zero","one","two","three","four","five","six"]
+//             dieString = dieStringArray[this.value] 
+//             return dieString
+//         }
+//     }
+// }
+
