@@ -43,25 +43,24 @@ const displaySpellBook=(book) =>{
 
 const allSpells = getAllSpells();
 
-makeEvilSpellBook=(allSpells) => {
+const makeEvilSpellBook=(allSpells) => {
    let evilBook={}
     evilBook.title = "Evil Book";
-    evilBook.spells = allSpells.filter(spell = spell.isEvil)
+    evilBook.spells = allSpells.filter(spell => spell.isEvil)
 
     return evilBook;
 
 }
 
-
-
-makeGoodSpellBook=(allSpells) => {
+const makeGoodSpellBook = (allSpells) => {
     let goodBook={}
     goodBook.title = "Good Book";
-    goodBook.spells = allSpells.filter(spell =! spell.isEvil)
+    goodBook.spells = allSpells.filter(spell => !spell.isEvil)
 
     return goodBook;
 }
-
-displaySpellBook(makeGoodSpellBook());
+const goodBook = makeGoodSpellBook(allSpells);
+const evilBook = makeEvilSpellBook(allSpells);
+displaySpellBook(goodBook);
 console.log(" ")
 displaySpellBook(evilBook);
